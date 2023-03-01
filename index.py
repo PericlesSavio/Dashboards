@@ -14,6 +14,12 @@ years = df.year.unique()
 continents = df.continent.unique()
 
 
+fig1 = px.choropleth(df.query("year==2007"), locations="iso_alpha",
+                    color="lifeExp", # lifeExp is a column of gapminder
+                    hover_name="country", # column to add to hover information
+                    color_continuous_scale=px.colors.sequential.Plasma)
+
+
 
 
 table = html.Div(
@@ -80,13 +86,13 @@ tab3 = dbc.Tab([table], label="Table", className="p-4")
 
 
 
-
 pag1 = dbc.Tab([
     dbc.Row([
         dbc.Col([dbc.Card([dropdown, checklist, slider], body=True,)], width=4),
         dbc.Col([dbc.Card(dbc.Tabs([tab1, tab2, tab3]))], width=8),
-    ]),
-    ], label='Página 1')
+        dcc.Graph(figure=fig1),
+        ])
+        ], label='Página 1')
 pag2 = dbc.Tab([html.P('Página 2')], label='Página 2')
 pag3 = dbc.Tab([html.P('Página 3')], label='Página 3')
 
@@ -105,17 +111,24 @@ app.layout = dbc.Container([
                 ])            
             ])                
         ])
-    ]),
+    ], id='title'),
 
     dbc.Row([
         dbc.Col([
             dbc.Card([
                 dbc.CardBody([
-                    dbc.Card(dbc.Tabs([pag1, pag2, pag3]))
+                    dbc.Card(
+                        dbc.Tabs([pag1, pag2, pag3])
+                        
+
+                    ),
+                    
                 ])            
             ])                
         ])
     ]),
+
+    
 
     
 
@@ -124,7 +137,7 @@ app.layout = dbc.Container([
 
 
 
-## CALLBACKS ##
+## CALLBACKS #####################################################
 
 @callback(
     Output("line-chart", "figure"),
