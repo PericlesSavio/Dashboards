@@ -1,0 +1,15 @@
+#title {
+    padding: 20px 0;
+}
+
+.flex-display {
+    display: block !important;
+}
+
+
+
+.column4 {
+    float: left;
+    width: 25%;
+    background-color: #666;
+}
