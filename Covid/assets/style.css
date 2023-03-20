@@ -13,10 +13,19 @@ body {
     text-align: center;
 }
 
+#painel {
+    height: 482px;
+}
+
+#mapa {
+    width: 100%;
+}
+
 .card {
     background-color: #1F2C56!important;
     border-radius: 25px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 p {

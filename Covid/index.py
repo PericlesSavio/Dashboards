@@ -146,7 +146,7 @@ app.layout = dbc.Container([
                       style={'margin-top': '20px'},
                       ),
                 ])
-        ])], width=4),
+        ], id="painel") ], width=4),
         
         
         dbc.Col([
@@ -165,11 +165,21 @@ app.layout = dbc.Container([
                 ])
             ])], width=4),
 
-    dbc.Row([
-        dcc.Graph(id="map")
-    ])
+
+
 
     ]),
+    dbc.Row([
+        dbc.Col([
+            dbc.Card([
+                dbc.CardBody([
+                    dcc.Graph(id="map")
+                ])
+            ], id="mapa") 
+        ])
+               
+    ])
+
 ])
 
 
