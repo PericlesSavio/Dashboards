@@ -74,7 +74,7 @@ app.layout = dbc.Container([
             dbc.Card([
                 dbc.CardBody([
                     html.H6('Global Cases'),
-                    html.P(f"{covid_data_1['confirmed'].iloc[-1]:,.0f}"),
+                    html.P(f"{covid_data_1['confirmed'].iloc[-1]:,.0f}", className='p1'),
                     html.P('novos:  ' + f"{covid_data_1['confirmed'].iloc[-1] - covid_data_1['confirmed'].iloc[-2]:,.0f} "
                    + ' (' + str(round(((covid_data_1['confirmed'].iloc[-1] - covid_data_1['confirmed'].iloc[-2]) /
                                        covid_data_1['confirmed'].iloc[-1]) * 100, 2)) + '%)')
@@ -85,7 +85,7 @@ app.layout = dbc.Container([
             dbc.Card([
                 dbc.CardBody([
                     html.H6('Global Deaths'),
-                    html.P(f"{covid_data_1['death'].iloc[-1]:,.0f}"),
+                    html.P(f"{covid_data_1['death'].iloc[-1]:,.0f}", className='p1'),
                     html.P('novos:  ' + f"{covid_data_1['death'].iloc[-1] - covid_data_1['death'].iloc[-2]:,.0f} "
                    + ' (' + str(round(((covid_data_1['death'].iloc[-1] - covid_data_1['death'].iloc[-2]) /
                                        covid_data_1['death'].iloc[-1]) * 100, 2)) + '%)')
@@ -96,7 +96,7 @@ app.layout = dbc.Container([
             dbc.Card([
                 dbc.CardBody([
                     html.H6('Global Recovered'),
-                    html.P(f"{covid_data_1['recovered'].iloc[-1]:,.0f}"),
+                    html.P(f"{covid_data_1['recovered'].iloc[-1]:,.0f}", className='p1'),
                     html.P('novos:  ' + f"{covid_data_1['recovered'].iloc[-1] - covid_data_1['recovered'].iloc[-2]:,.0f} "
                    + ' (' + str(round(((covid_data_1['recovered'].iloc[-1] - covid_data_1['recovered'].iloc[-2]) /
                                        covid_data_1['recovered'].iloc[-1]) * 100, 2)) + '%)')
@@ -107,7 +107,7 @@ app.layout = dbc.Container([
             dbc.Card([
                 dbc.CardBody([
                     html.H6('Global Active'),
-                    html.P(f"{covid_data_1['active'].iloc[-1]:,.0f}"),
+                    html.P(f"{covid_data_1['active'].iloc[-1]:,.0f}", className='p1'),
                     html.P('novos:  ' + f"{covid_data_1['active'].iloc[-1] - covid_data_1['active'].iloc[-2]:,.0f} "
                    + ' (' + str(round(((covid_data_1['active'].iloc[-1] - covid_data_1['active'].iloc[-2]) /
                                        covid_data_1['active'].iloc[-1]) * 100, 2)) + '%)')
@@ -127,7 +127,7 @@ app.layout = dbc.Container([
                                   value='US',
                                   placeholder='Select Countries',
                                   options=[{'label': c, 'value': c}
-                                           for c in (covid_data['Country/Region'].unique())], className='dcc_compon'),
+                                           for c in (covid_data['Country/Region'].unique())], className='dcc_compon drop_css'),
 
                      html.P('New Cases : ' + '  ' + ' ' + str(covid_data_2['date'].iloc[-1].strftime("%B %d, %Y")) + '  ', className='fix_label',  style={'color': 'white', 'text-align': 'center'}),
                      dcc.Graph(id='confirmed', config={'displayModeBar': False}, className='dcc_compon',

@@ -28,6 +28,37 @@ body {
     margin-bottom: 20px;
 }
 
+
+.Select, .Select div, .Select input, .Select span {
+    background-color: #192444;
+    color:#DDDDDD
+}
+
+.Select div:hover {
+    background-color: #1F2C56;
+}
+
+
+.has-value.Select--single>.Select-control .Select-value .Select-value-label {
+    color: #DDDDDD
+}
+
+.p1 {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Remove default arrow */
+    background-image: #000000;
+    /* Add custom arrow */
+}
+
+
+
 p {
     margin: 0;
     padding: 0;
@@ -37,6 +68,16 @@ h6 {
     font-size: 20px;
     font-weight: bolder;
 }
+
+
+
+
+
+
+
+
+
+
 
 @media (min-width: 1900px){
 
@@ -53,31 +94,6 @@ h6 {
 
 
 
-.xcontainer {
-    width: 100%!important;
-    margin: 0!important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.paineisz {
-    background-color: #1F2C56;
-    text-align: center;
-    margin: 10px
-}
 
 
 
